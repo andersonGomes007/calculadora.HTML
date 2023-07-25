@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        var calculadora = {
+            numero1: 0,
+            numero2: 0,
+            resultado: 0,
+
+            getSoma: function () {
+                this.resultado = (this.numero1 + this.numero2);
+                confirm("a soma dos numeros e " + this.resultado);
+            },
+            getSub: function () {
+                this.resultado = (this.numero1 - this.numero2);
+                confirm("a subtracao dos numeros e " + this.resultado);
+            },
+            getMul: function () {
+                this.resultado = (this.numero1 * this.numero2);
+                confirm("a multiplicacao dos numeros e " + this.resultado);
+            },
+            getDiv: function () {
+                this.resultado = (this.numero1 / this.numero2);
+                confirm("a divisao dos numeros e " + this.resultado);
+            },
+        }
+        function calcular() {
+            calculadora.numero1 = parseFloat(document.getElementById("numero1").value)
+            calculadora.numero2 = parseFloat(document.getElementById("numero2").value)
+            if (document.getElementById("op").value == "+")
+                calculadora.getSoma();
+
+            if (document.getElementById("op").value == "-")
+                calculadora.getSub();
+
+            if (document.getElementById("op").value == "*")
+                calculadora.getMul();
+
+            if (document.getElementById("op").value == "/")
+                calculadora.getDiv();
+
+            else
+                confirm("operador nao identificado")
+        }
+
+    </script>
+    Digite o primeiro numero: <input type="text" id="numero1">
+    <br>
+    Digite o segundo numero: <input type="text" id="numero2">
+    <br>
+    Digite o operador numero(+,-,*,/): <input type="text" id="op">
+    <br>
+    <button type="button" onclick = "calcular()"> calcular </button>
+</body>
+
+</html>
